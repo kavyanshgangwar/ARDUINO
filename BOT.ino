@@ -1,4 +1,4 @@
-int m1,m2,m3;
+int m1,m2,m3;//autonomous part is written as black strip in bw
 int i=0;
 void setup() {
   // put your setup code here, to run once:
@@ -86,14 +86,14 @@ m3=analogRead(A2);
  digitalWrite(3,LOW);
 
  }
- if(m1<500 && m2>500 && m3>500)
+ if(m1>500 && m2<500 && m3<500)
  {analogWrite(11,255);
   analogWrite(5,255);
   digitalWrite(12,HIGH);//left forward
   digitalWrite(13,LOW);
   digitalWrite(3,LOW);//right backward
   digitalWrite(4,HIGH);}
-  if(m1>500 && m2>500 && m3<500)
+  if(m1<500 && m2<500 && m3>500)
   {analogWrite(11,255);
 analogWrite(5,255);
 digitalWrite(12,LOW);//left backward
@@ -102,7 +102,7 @@ digitalWrite(3,HIGH);//right forward
 digitalWrite(4,LOW);
 }
 
-if(m1<500 && m2>500 && m3<500)
+if(m1<500 && m2>500 && m3<500)//led blink ka case at start and end
 {if(i==0)
 {digitalWrite(7,HIGH);
 digitalWrite(8,LOW);
